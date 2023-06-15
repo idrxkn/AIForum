@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package delivery;
+
+message User {
+  int32 id = 1;
+  string username = 2;
+  string email = 3;
+  string password = 4;
+}
+
+message Session {
+  int32 id = 1;
+  string user = 2;
+  string session = 3;
+}
+
+message LikeCounts {
+  int32 likes = 1;
+  int32 dislikes = 2;
+}
+
+message Post {
+  int32 id = 1;
+  string owner = 2;
+  string title = 3;
+  string content = 4;
+  string category = 5;
+  string image = 6;
+  LikeCounts like_counts = 7;
+}
+
+message Comment {
+  int32 id = 1;
+  int32 postId = 2;
+  string owner = 3;
+  string content = 4;
+  LikeCounts like_counts = 5;
+}
+
+message ReadRequest {
+  string id = 1;
+}
+
+message ReadResponse {
+  Post post = 1;
+  repeated Comment comments = 2;
+  bool current_user = 3;
+}
+
+message AddCommentRequest {
+  string id = 1;
+  string comment = 2;
+}
+
+message AddCommentResponse {}

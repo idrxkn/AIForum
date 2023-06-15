@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/heroes/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <link rel="stylesheet" href="../style/news.css">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+  rel="stylesheet"
+/>
+<link rel="icon" href="../style/img/logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+  rel="stylesheet"
+/>
+
+  <title></title>
+  <style>
+   
+    .logo {
+        display: flex;
+        gap: 2px;
+      }
+      .logo-title {
+        padding-top: 5px;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-md-12 d-flex justify-content-center right-bck">
+        <div class="registration-right">
+          <nav class="navbar ">
+            <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+              <a class="navbar-brand" href="/">
+                <div class="logo">
+                  <img
+                    style="width: 50px; height: 57px"
+                    src="../style/img/blogo.png"
+                  />
+                  <h1 class="logo-title" style="color: #000; font-family: Bebas Neue">
+                    Forum
+                  </h1>
+                </div>
+              </a>
+
+              <div>
+                <a id="a1" class="btn btn-success" href="/post" style="background-color: rgb(28, 102, 24);" >Add news</a>
+                <a id="a2" class="btn btn-success" href="/logout" style="background-color: #af3434;
+                ">LogOut</a> 
+                </div>
+                          
+
+            </div>
+          </nav>
+          <hr>
+<div class="all" style="width: 1150px; height: 700px; border-radius: 40px;  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+">
+<div class="notall" style="padding: 60px;">
+<h2>Add Post </h2>
+<form action="/addpost" method="post">
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Title</label>
+    <div class="col-sm-10">
+      <input name="newtitle" style="width: 350px;"type="text" class="form-control" placeholder="Title">
+    </div>
+  </div>
+  <br>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Content</label>
+    <div class="col-sm-10">
+      <textarea name="newcontent" class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+  <br>
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Select category</label>
+    <div class="col-sm-10">
+      <select name="newcategory" class="form-control" style="width: 350px; cursor: pointer;" multiple>
+        <option>Events</option>
+        <option>Clubs</option>
+        <option>Study</option>
+        <option>StackOverAITU</option>
+        <option>AITU Sports</option>
+        <option>Anime</option>
+      </select>
+    </div>
+
+  </div>
+  <br>
+  <fieldset class="form-group">
+   
+  </fieldset>
+  <br>
+  <hr>
+  <div class="form-group row ">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-primary" style="background-color:rgba(28, 102, 24)">Publish</button>
+    </div>
+  </div>
+</form>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+  <i class="fas fa-arrow-up"></i>
+</button>
+</body>
+
+
+</html>
+

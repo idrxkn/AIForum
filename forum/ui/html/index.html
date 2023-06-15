@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="../style/img/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet " href="../style/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="canonical"
+      href="https://getbootstrap.com/docs/5.1/examples/heroes/"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"
+    />
+    <title></title>
+    <style>
+      body {
+        background-color: #fff;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 150px;
+      }
+      button {
+        border: 0;
+        background-color: transparent;
+        color: #fff;
+        font-family: "Lato";
+      }
+      .logo {
+        display: flex;
+        gap: 2px;
+      }
+      .logo-title {
+        padding-top: 5px;
+      }
+      .add-button {
+        background-color: #287aaa;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .add-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      .logout-button {
+        background-color: #af3434;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .logout-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+      .signup-button {
+        background-color: #00944d;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .signup-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+      .discussions {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding-bottom: 100px;
+      }
+      a:hover{
+        opacity: .70;
+      }
+      .card{
+        width: 230px;
+        height: 180px;
+        border-radius: 10px;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+      }
+      
+      .card:hover .card-text{
+        opacity: 1;
+        transition: all 1s ease;
+      }
+      .card:hover .readMore{
+        opacity: 1;
+        transition: all 1.5s ease;
+
+      }
+      .card-title span{
+        font-size: 20px;
+      }
+      .readMore{
+      opacity: 0;}
+      .card-text{
+        font-size: 18px;
+        font-weight: 200;
+        opacity: 0;
+      }
+      .headline {
+        text-align: center;
+        margin-top: 70px;
+        margin-bottom: 50px;
+      }
+      .lists {
+        display: flex;
+      }
+      .center {
+        text-align: center;
+        font-family: "Bebas Neue";
+        color: #fff;
+        margin-top: 70px;
+      }
+      .center h1 {
+        font-size: 120px;
+        margin-top: -10px;
+      }
+      .center img {
+        width: 300px;
+        height: 300px;
+      }
+      .forum-image {
+        max-width: 230px;
+        max-height: 200px;
+      }
+      .forums {
+        text-align: center;
+      }
+      .forum-element {
+        cursor: pointer;
+      }
+      .event-list {
+        display: flex;
+      }
+      .footer {
+        background-color: #1a1919;
+        width: 100vw;
+        font-family: "Lato";
+        padding-top: 13px;
+      }
+      .cantainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      .footer p {
+        font-weight: 400;
+        font-size: 16px;
+        color: #fff;
+      }
+      .footer-logo {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+      .footer-elements {
+        margin: 0 5px;
+        font-size: 23px;
+      }
+      .footer-elements:hover {
+        opacity: 0.5;
+      }
+      .footer a {
+        color: #fff;
+      }
+      .footer-bottom {
+        padding-top: 40px;
+        text-transform: capitalize;
+      }
+    </style>
+  </head>
+
+  <body>
+    <img
+      style="
+        position: absolute;
+        top: 284px;
+        left: 660px;
+        width: 37px;
+        height: 37px;
+      "
+      src="../style/img/left-eye.svg"
+      alt=""
+      class="left-eye"
+    />
+    <img
+      style="
+        position: absolute;
+        top: 286px;
+        left: 745px;
+        width: 37px;
+        height: 37px;
+      "
+      src="../style/img/right-eye.svg"
+      alt=""
+      class="right-eye"
+    />
+
+    <video
+      poster="../style/img/poster.jpg"
+      class="video-background"
+      autoplay
+      muted
+      loop
+      preload="auto"
+      playsinline
+      style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1;
+        height: 120vh;
+      "
+    >
+      <source src="../style/img/bg.MP4" type="video/mp4" />
+    </video>
+    <nav class="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <div class="logo">
+            <img
+              style="width: 50px; height: 50px"
+              src="../style/img/logo.png"
+            />
+            <h1 class="logo-title" style="color: #fff; font-family: Bebas Neue">
+              Forum
+            </h1>
+          </div>
+        </a>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a href="/?type=business" style="text-decoration: none">
+              <button name="category" value="business">Events</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/?type=entertainment" style="text-decoration: none">
+              <button name="category" value="entertainment">Clubs</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/?type=health" style="text-decoration: none">
+              <button name="category" value="health">Study</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/?type=science" style="text-decoration: none">
+              <button name="category" value="science">StackOverAITU</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/?type=sports" style="text-decoration: none">
+              <button name="category" value="sports">AITU Sports</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/?type=technology" style="text-decoration: none">
+              <button name="category" value="technology">Anime</button>
+            </a>
+          </li>
+          {{if .CurrentUser}}
+          <li class="nav-item">
+            <a id="a5" href="/?type=mynews" style="text-decoration: none">
+              <button>My Posts</button>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a id="a5" href="/?type=liked" style="text-decoration: none">
+              <button>Liked</button>
+            </a>
+          </li>
+          {{end}}
+        </ul>
+
+        <div style="display: flex; gap: 10px">
+          {{if .CurrentUser}}
+
+          <a id="a1" class="add-button" href="/post">Add a post</a>
+          <a id="a2" class="logout-button" href="/logout">Log out</a>
+          {{else}}
+          <a id="a3" class="add-button" href="/login">Log in </a>
+          <a id="a4" class="signup-button" href="/register">Sign up</a>
+          {{end}}
+        </div>
+      </div>
+    </nav>
+    <div class="center">
+      <img src="../style/img/logo.svg" alt="" class="aitu-logo" />
+      <h1>AIFORUM</h1>
+    </div>
+    <div
+      class="forum-classes"
+      style="
+        width: 1300px;
+        height: 680px;
+        border-radius: 50px;
+        background-color: #fff;
+        display: block;
+        margin: 0 auto;
+        margin-top: 120px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+        font-family: Bebas Neue;
+      "
+    >
+      <div
+        class="forums"
+        style="display: flex; flex-direction: column; gap: 50px"
+      >
+        <div
+          class="forum-top"
+          style="
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+          "
+        >
+          <div class="events forum-element">
+            <a href="/?type=business" style="text-decoration: none">
+              <img
+                class=""
+                src="../style/img/events.png"
+                style="width: 340px; height: 220px; margin-top: 50px"
+                alt=""
+              />
+              <h3>EVENTS</h3>
+            </a>
+          </div>
+          <div class="clubs forum-element">
+            <a href="/?type=entertainment" style="text-decoration: none">
+              <img
+                class=""
+                src="../style/img/clubs.png"
+                alt=""
+                style="margin-top: 50px; width: 230px"
+              />
+              <h3>CLUBS</h3>
+            </a>
+          </div>
+          <div class="study forum-element">
+            <a href="/?type=health" style="text-decoration: none">
+              <img
+                class="forum-image"
+                src="../style/img/study.png"
+                alt=""
+                style="margin-top: 100px; margin-right: 50px"
+              />
+              <h3>STUDY</h3>
+            </a>
+          </div>
+        </div>
+        <div
+          class="forum-down"
+          style="
+            display: flex;
+            justify-content: space-around;
+            margin-left: 40px;
+          "
+        >
+          <div class="stack forum-element">
+            <a href="/?type=science" style="text-decoration: none">
+              <img
+                class="forum-image"
+                src="../style/img/stack.jpg"
+                alt=""
+                style="border-radius: 27px"
+              />
+              <h3>StackOverAITU</h3>
+            </a>
+          </div>
+          <div class="sport forum-element">
+            <a href="/?type=sports" style="text-decoration: none">
+              <img class="forum-image" src="../style/img/sport.png" alt="" />
+              <h3>AITU Sports</h3>
+            </a>
+          </div>
+
+          <div class="anime forum-element">
+            <a href="/?type=technology" style="text-decoration: none">
+              <img class="forum-image" src="../style/img/anime.png" alt="" />
+              <h3>ANIME</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h2 class="headline" style="font-family: Bebas Neue;">In anticipation:</h2>
+    {{range .Posts}}
+
+    <div class="discussions">
+      <div class="event-list">
+        <div class="card flex-row">
+          <img class="card-img-left img-fluid" src="{{.Image}}" />
+          <div class="card-body">
+            <h4 class="card-title">
+              <span style="font-size: 28px;">
+                {{.Title}}
+              </span>
+            <p class="card-text">{{.Content}}</p>
+            <a href="/read/?id={{.ID}}" class="readMore"style="font-size: 14px;  color: #505050; font-weight: 300; color:blue;">Read more</a>
+          </div>
+        </div>
+      </div>
+      {{end}}
+    </div>
+
+    <footer class="footer">
+      <div class="cantainer">
+        <div class="row">
+          <div class="col">
+            <p
+              style="color: white; text-align: center; font-weight:0; letter-spacing: 2px; font-size: 1.8rem; "
+            >
+              AIFORUM
+            </p>
+            <p style="position: relative; top: -10px">
+              We was exciting to make website, thank you! Contact us:
+            </p>
+            <a href="#"
+              ><i class="bx bxl-facebook-circle footer-elements"></i
+            ></a>
+            <a href="https://t.me/dacakeee"
+              ><i class="bx bxl-telegram footer-elements"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/%D0%B4%D0%B0%D1%80%D1%85%D0%B0%D0%BD-%D0%B1%D0%B5%D0%BA%D1%83%D0%B7%D0%B0%D0%BA-155490228"
+              ><i class="bx bxl-linkedin-square footer-elements"></i
+            ></a>
+            <a href=""><i class="bx bxl-youtube footer-elements"></i></a>
+            <a href=""
+              ><i class="bx bxl-google-plus-circle footer-elements"></i
+            ></a>
+            <div class="footer-bottom">
+              <p>
+                copyright &copy;2023, designed by
+                <span
+                  >Darkhan Bekuzak, Tairzhan Kassenov, Yermekbaev Bekslan
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("mousemove", (e) => {
+        console.log(e);
+        const mouseX = e.clientX;
+        const mouseY = e.clientY;
+        const anchor = document.querySelector(".aitu-logo");
+        const rekt = anchor.getBoundingClientRect();
+        const anchorX = rekt.left + rekt.width / 2;
+        const anchorY = rekt.top + rekt.height / 2;
+        const angleDeg = angle(mouseX, mouseY, anchorX, anchorY);
+        const leftEye = document.querySelector(".left-eye");
+        leftEye.style.transform = `rotate(${angleDeg + 90}deg)`;
+        const righEye = document.querySelector(".right-eye");
+        righEye.style.transform = `rotate(${angleDeg + 90}deg)`;
+      });
+      function angle(cx, cy, ex, ey) {
+        const dy = ey - cy;
+        const dx = ex - cx;
+        const rad = Math.atan2(dy, dx);
+        const deg = (rad * 180) / Math.PI;
+        return deg;
+      }
+    </script>
+  </body>
+</html>

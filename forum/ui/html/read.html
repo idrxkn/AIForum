@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/heroes/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css">
+  <link rel="stylesheet" href="../style/news.css">
+  <link rel="stylesheet" href="../style/read.css">
+  <link
+      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  <link rel="stylesheet" href="../style/like.css">
+  <link
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+  rel="stylesheet"
+/>
+<link rel="icon" href="../style/img/logo.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ 
+  <title></title>
+  <style>
+   .signup-button {
+        background-color: #00944d;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+    .logo {
+        display: flex;
+        gap: 2px;
+        margin-top: 12px;
+      }
+      .logo-title {
+        padding-top: 5px;
+      }
+      .add-button {
+        background-color: #287aaa;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .add-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+
+      .logout-button {
+        background-color: #af3434;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .logout-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+      .signup-button {
+        background-color: #00944d;
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 10px;
+        border-radius: 7px;
+      }
+      .signup-button:hover {
+        color: #fff;
+        opacity: 0.7;
+      }
+      .bxs-like{
+        font-size: 40px;
+        padding-left: 10px;
+      }
+      .bx{
+        cursor: pointer;
+      }
+      .bx:hover{
+        opacity: .70;
+      }
+      .bxs-dislike{
+        font-size: 40px;
+        float: right;
+      }
+      .event-list .card-title span {
+    padding-left: -5px;
+    font-size: 22px;
+    font-weight: 700;
+}
+.event-list .card-text{
+  padding-left: 5px;
+  font-weight: 300;
+}
+.like-disl {
+  margin-left: 0;
+  
+}
+.like-disl .bxs-like{
+  padding-right: 10px;
+}
+.like-disl .bxs-dislike{
+  padding-right: 10px;
+}
+  </style>
+</head>
+
+<body>
+    <div class="container-fluid ">
+      <div class="row">
+        <div class="col-md-12 d-flex justify-content-center right-bck">
+  
+          <div class="registration-right">
+            <nav class="navbar ">
+              <div class="container-fluid" style="padding-right: 0px;padding-left: 0px;">
+                <div class="logo">
+                  <img
+                    style="width: 50px; height: 57px"
+                    src="../style/img/blogo.png"
+                  />
+                  <h1
+                    class="logo-title"
+                    style="color: #000; font-family: Bebas Neue"
+                  >
+                    <a style="color: #362c22; text-decoration: none" href="/">
+                      Forum
+                    </a>
+                  </h1>
+                </div>
+  
+                  <div style="display: flex; gap: 10px">
+                    {{if .CurrentUser}}
+                    <a id="a1" class="btn btn-success" href="/post" style="background-color: rgb(28, 102, 24);" >Add news</a>
+                    <a id="a2" class="btn btn-success" href="/logout" style="background-color: #af3434;
+                    ">LogOut</a> 
+                         {{else}}
+                         <a id="a3" class="add-button" href="/login">Log in </a>
+                         <a id="a4" class="signup-button" href="/register">Sign up</a>
+                        {{end}}
+                  </div>
+          
+  
+  
+              </div>
+            </nav>
+
+
+  <div class="container cont-post" style="text-align:center">
+    <h1 style="font-family: Bebas Neue; color: #000; font-size: 50px;" >{{.Posts.Title}}</h1>
+    <h4 style="font-family: Lato; font-size: 16px; margin-top: -10px; color: #af3434;"> by {{.Posts.Owner}}</h4>
+
+    <!-- <img src="{{.Posts.Image}}" height="500px" alt="sdf"> -->
+      <p class="content" style="text-align:center; margin-top: 50px;" >{{.Posts.Content}}</p>
+  </div>
+  <div class="container" style="display: flex;">
+  <form class="like-disl" action="/like/?id={{.Posts.ID}}" method="post">
+    {{if .CurrentUser}}
+    <button class="button" type="submit" name="like" value="like" style="background-color: #fff; border: none; "><i class='bx bxs-like'></i></button>
+      {{else}}
+      <i class='bx bxs-like'></i>
+      {{end}}
+      <h4 style="margin-left: 22px;">{{.Posts.Likes}}</h4>
+  </form>
+  <form class="like-disl"  action="/like/?id={{.Posts.ID}}" method="post">
+    {{if .CurrentUser}}
+    <button class="button" type="submit" name="dislike" value="dislike" style="background-color: #fff; border: none; "><i class='bx bxs-dislike' ></i>
+      {{else}}
+      <i class='bx bxs-dislike' style="margin-top: 5px;" ></i>
+      {{end}}
+      <h4 style="margin-left: 13px;">{{.Posts.Dislikes}}</h4>
+</form> 
+  </div>
+
+  {{if .CurrentUser}}
+        
+
+       <form action="/read/?id={{.Posts.ID}}" method="post">
+          <div class="col-sm-10 comment-block container">
+            <input name="comment" style="max-height: 80px; max-width: 800px;margin: 0 auto;" type="text" class="form-control comment" placeholder="Comment">
+            <br>
+          </div>
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button type="submit" class="btn btn-primary btn-lg" style="background-color: rgb(28, 102, 24); padding: 6px 8px;">Comment</button>
+          </div>
+      </form>
+   {{end}}
+   
+{{if .CurrentUser}}
+
+    {{range .Comments}}
+      <div class="event-list">
+        <div class="card flex-row">
+          <div class="card-body" style="margin:0">
+            <h4 class="card-title" >
+              <span style="color:blue; font-size: 22px;"> {{.Owner}}: </span>
+            </h4>
+            <p class="card-text">{{.Comment}} </p>
+            <form class="like-disl" action="/likecomment/?id={{.ID}}" method="post">
+              <button class="button" type="submit" name="likeC" value="like" style="background-color: #fff; border: none; "><i class='bx bxs-like' style="font-size: 30px"></i></button>
+                <p style="color:#000; margin-left: 10px;">{{.Likes}}</p>
+            </form>
+            <form class="like-disl"  action="/likecomment/?id={{.ID}}" method="post">
+              <button class="button" type="submit" name="dislikeC" value="dislike" style="background-color: #fff; border: none; "><i class='bx bxs-dislike' style="font-size: 30px"></i></button>
+                <p style="color:#000; margin-left: 10px;">{{.Dislikes}}</p>
+          </form> 
+          </div>
+          
+        </div>
+        
+      </div>
+    
+    {{end}}
+{{else}}
+      {{range .Comments}}
+      <div class="event-list">
+        <div class="card flex-row">
+          <div class="card-body">
+            <h4 class="card-title">
+              <span style="color: blue !important" > {{.Owner}} </span>
+            </h4>
+            <p class="card-text">{{.Comment}} </p>
+            <form class="like-disl" action="/likecomment/?id={{.ID}}" method="post">
+              <i class='bx bxs-like' style="font-size: 30px; padding-left: 5px;"></i>
+            </button>
+                <p style=" margin-left: 13px;">{{.Likes}}</p>
+            </form>
+            <form class="like-disl"  action="/likecomment/?id={{.ID}}" method="post">
+              <i class='bx bxs-dislike' style="font-size: 30px; margin-top: 3px;"></i></button>
+                <p style=" margin-left: 10px;">{{.Dislikes}}</p>
+          </form> 
+          </div>
+          
+        </div>
+        
+      </div>
+
+      {{end}}
+  {{end}}
+  
+     
+     
+  </div>
+  </div>
+  </div>
+  </div>
+            
+
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  </body>
+
+  
+  </html>
+
